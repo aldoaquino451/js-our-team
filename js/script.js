@@ -86,14 +86,15 @@ for ( let i in team ) {
 for ( let i in team ) {
   
   const member = team[i];
+  
   const cards = document.getElementById('a-container');
   const ul = document.createElement('ul');
+  ul.classList.add('w-50')
   cards.append(ul);
 
-  ul.innerHTML += `<li>${member.firstname}</li>`;
-  ul.innerHTML += `<li>${member.lastname}</li>`;
+  ul.innerHTML += `<li>${member.lastname} ${member.firstname}</li>`;
   ul.innerHTML += `<li>${member.role}</li>`;
-  ul.innerHTML += `<li>${member.profilePic}</li>`;
+  ul.innerHTML += `<li><img class="w-75" src="./img/${member.profilePic}" alt="chief editor"></li>`;
 
 
 };

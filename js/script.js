@@ -1,17 +1,12 @@
 /*
-  1. Dobbiamo creare un array che rappresenta l'intero team [array]
-  2. Il team sarà composto da diversi oggetti che rappresentano i membri {object}
-  3. Ogni membro sarà un oggetto con determinate proprietà come nome ruolo e foto { key : value, }
-  4. con un ciclo for in stampiamo in console tutte le proprietà coi relativi valori per ogni membro del team
-  5. lo stesso di sopra ma nell'html creiamo una lista dove stampare e visualizzare i dati 
+
+  Wayne Barnett  	Founder & CEO	        wayne-barnett-founder-ceo.jpg   
+  Angela Caroll	  Chief Editor	        angela-caroll-chief-editor.jpg    
+  Walter Gordon  	Office Manager	      walter-gordon-office-manager.jpg    
+  Angela Lopez	  Social Media Manager	angela-lopez-social-media-manager.jpg    
+  Scott Estrada	  Developer	            scott-estrada-developer.jpg    
+  Barbara Ramos	  Graphic Designer	    barbara-ramos-graphic-designer.jpg 
   
-  
-  Wayne Barnett	Founder & CEO	wayne-barnett-founder-ceo.jpg   
-  Angela Caroll	Chief Editor	angela-caroll-chief-editor.jpg    
-  Walter Gordon	Office Manager	walter-gordon-office-manager.jpg    
-  Angela Lopez	Social Media Manager	angela-lopez-social-media-manager.jpg    
-  Scott Estrada	Developer	scott-estrada-developer.jpg    
-  Barbara Ramos	Graphic Designer	barbara-ramos-graphic-designer.jpg 
 */
 
 
@@ -64,6 +59,7 @@ const team = [
 
 ]
 
+
 // 4. con un ciclo for in stampiamo in console tutte le proprietà coi relativi valori per ogni membro del team
 
 for ( let i in team ) {
@@ -80,21 +76,47 @@ for ( let i in team ) {
 };
 
 
-//
+// 5. Lo stesso di sopra ma nell'html creiamo una lista dove stampare e visualizzare i dati
+/*
+for ( let i in team ) {
+  
+  const member = team[i];
 
+  const container = document.getElementById('a-container');
+  const ul = document.createElement('ul');
+  container.append(ul);
+
+  ul.innerHTML += `<li>${member.firstname} ${member.firstname}</li>`;
+  ul.innerHTML += `<li>${member.role}</li>`;
+  ul.innerHTML += `
+  <li>
+    <img class="card-img-top" src="./img/${member.profilePic}" alt="">
+  </li>`;
+
+};
+*/
+
+// 6. BONUS: Invece della lista inserisci i valori di tutte le proprietà all'interno di una card bootstrap
 
 for ( let i in team ) {
   
   const member = team[i];
-  
-  const cards = document.getElementById('a-container');
-  const ul = document.createElement('ul');
-  ul.classList.add('w-50')
-  cards.append(ul);
 
-  ul.innerHTML += `<li>${member.lastname} ${member.firstname}</li>`;
-  ul.innerHTML += `<li>${member.role}</li>`;
-  ul.innerHTML += `<li><img class="w-75" src="./img/${member.profilePic}" alt="chief editor"></li>`;
+  const container = document.getElementById('a-container');
+  const card = document.createElement('div');
+  card.classList.add('card', 'a-card')
 
+  container.append(card);
+
+  card.innerHTML += `
+  <img class="card-img-top" src="./img/${member.profilePic}" alt="${member.firstname} ${member.lastname}">
+  `;
+
+  card.innerHTML += `
+  <div class="card-body">
+    <h3>${member.lastname} ${member.firstname}</h3>
+    <p class="card-text">${member.role}</p>
+  </div>
+  `;
 
 };

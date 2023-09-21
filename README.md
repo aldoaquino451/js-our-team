@@ -31,3 +31,4 @@ Barbara Ramos	Graphic Designer	barbara-ramos-graphic-designer.jpg
 3. Ogni membro sarà un oggetto con determinate proprietà come nome ruolo e foto 
 4. con un ciclo for in stampiamo in console tutte le proprietà coi relativi valori per ogni membro del team
 5. lo stesso di sopra ma nell'html creiamo una lista dove stampare e visualizzare i dati
+6. BONUS: Invece della lista inserisci i valori di tutte le proprietà all'interno di una card bootstrap

@@ -29,6 +29,7 @@ p {
 
 .a-card {
   border: none;
+  max-width: 350px;
 }
 
 #a-container {
